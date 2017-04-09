@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_questions"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.quizgame.Questions">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="57dp"
+        android:id="@+id/question" />
+
+    <Button
+        android:text="@string/false_button"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:id="@+id/falseButton"
+        android:background="@drawable/falsebutton"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="14dp"
+        android:layout_alignStart="@+id/trueButton"
+        android:layout_below="@+id/trueButton" />
+
+    <Button
+        android:text="@string/true_button"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:id="@+id/trueButton"
+        android:background="@drawable/answerbutton"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/questionImage"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/q1"
+        android:id="@+id/questionImage"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_below="@+id/question"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text=""
+        android:background="@android:color/transparent"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/settings"
+        android:drawableStart="@drawable/ic_settings_black_24dp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:text=""
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/helpButton"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:drawableStart="@drawable/ic_help_black_24dp" />
+
+</RelativeLayout>
