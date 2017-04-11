@@ -35,14 +35,15 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/questionTitle"
             android:fontFamily="sans-serif"
-         android:gravity="center_vertical" />
+         android:gravity="center_vertical|center_horizontal" />
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:id="@+id/questionText"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/questionTitle" />
+        android:layout_below="@+id/questionTitle"
+        android:background="@drawable/edittextbg" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -54,12 +55,10 @@
         android:layout_toEndOf="@+id/chooseImageText">
         <RadioButton android:id="@+id/radio_true"
             android:layout_width="104dp"
-            android:layout_height="47dp"
             android:text="True"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked" />
         <RadioButton android:id="@+id/radio_false"
             android:layout_width="104dp"
-            android:layout_height="44dp"
             android:text="False"
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
@@ -74,19 +73,17 @@
         android:layout_below="@+id/questionText"
         android:layout_toStartOf="@+id/questionText"
         android:layout_marginTop="15dp"
-        android:gravity="center_vertical" />
+        android:gravity="center_vertical|center_horizontal" />
 
     <TextView
         android:id="@+id/answer"
         android:text="Answer"
-        android:layout_marginTop="15dp"
-        android:layout_alignTop="@+id/radio_group"
         android:layout_alignParentStart="true"
         android:elevation="1dp"
         android:layout_width="75dp"
         android:layout_height="30dp"
-        android:layout_below="@+id/imagePreview"
-        android:gravity="center_vertical" />
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_alignTop="@+id/radio_group" />
 
     <ImageView
         android:layout_width="200dp"
@@ -96,7 +93,8 @@
         android:layout_toEndOf="@+id/chooseImageText"
         android:id="@+id/imagePreview"
         android:layout_marginTop="15dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher"
+        android:background="@drawable/edittextbg" />
 
     <ImageButton
         android:layout_width="40dp"
@@ -116,7 +114,8 @@
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:background="@drawable/commonbutton" />
 
 
 </RelativeLayout>
