@@ -1,7 +1,9 @@
 package com.example.quizgame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,5 +15,15 @@ public class MainActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_main);
+
+        //load questions
+        QuestionsManager.readAllQuestionsFromFile(this.getApplicationContext());
+    }
+
+
+    public void onAddQuestionBtnClick(View view)
+    {
+        Intent addQuestionIntent = new Intent(this, AddQuestionActivity.class);
+        startActivity(addQuestionIntent);
     }
 }

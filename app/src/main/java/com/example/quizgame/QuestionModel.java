@@ -1,21 +1,34 @@
 package com.example.quizgame;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by raveenahegde on 11/04/17.
  */
 
 public class QuestionModel {
+
+
+
+    private String ID;
     private String question;
     private String answer;
     private String imagePath;
     private int score;
+    private Bitmap clueImage;
+
+    public QuestionModel()
+    {
+
+    }
 
     public QuestionModel(String pquestion, String panswer, String pimagePath,int pscore)
     {
         question = pquestion;
         answer = panswer;
         imagePath = pimagePath;
-        score = pscore;
+//        score = pscore;
+        score = 3;
     }
 
     public String getQuestion() {
@@ -52,10 +65,27 @@ public class QuestionModel {
 
     public  String toString()
     {
-        String data = this.getQuestion() + "\t" +
+        String data = this.getID() + "\t" +
+                this.getQuestion() + "\t" +
                 this.getAnswer() + "\t" +
                 this.getImagePath() + "\t" +
                 this.getScore() + "\n";
         return data;
+    }
+
+    public Bitmap getClueImage() {
+        return clueImage;
+    }
+
+    public void setClueImage(Bitmap clueImage) {
+        this.clueImage = clueImage;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 }

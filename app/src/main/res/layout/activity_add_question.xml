@@ -38,12 +38,13 @@
          android:gravity="center_vertical|center_horizontal" />
 
     <EditText
-        android:layout_width="300dp"
         android:layout_height="100dp"
         android:id="@+id/questionText"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/questionTitle"
-        android:background="@drawable/edittextbg" />
+        android:background="@drawable/edittextbg"
+        android:layout_width="0dp"
+        android:layout_toEndOf="@id/question"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -52,7 +53,7 @@
         android:id="@+id/radio_group"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/imagePreview"
-        android:layout_toEndOf="@+id/chooseImageText">
+        android:layout_toEndOf="@+id/answer">
         <RadioButton android:id="@+id/radio_true"
             android:layout_width="104dp"
             android:text="True"
@@ -71,7 +72,6 @@
         android:layout_alignBottom="@+id/chooseImageBtn"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/questionText"
-        android:layout_toStartOf="@+id/questionText"
         android:layout_marginTop="15dp"
         android:gravity="center_vertical|center_horizontal" />
 
@@ -86,11 +86,12 @@
         android:layout_alignTop="@+id/radio_group" />
 
     <ImageView
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="200dp"
         app:srcCompat="@mipmap/ic_launcher"
         android:layout_below="@+id/questionText"
         android:layout_toEndOf="@+id/chooseImageText"
+        android:layout_toStartOf="@id/chooseImageBtn"
         android:id="@+id/imagePreview"
         android:layout_marginTop="15dp"
         android:src="@mipmap/ic_launcher"
@@ -100,12 +101,13 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:srcCompat="@drawable/ic_add_image"
-        android:layout_marginEnd="30dp"
         android:layout_below="@+id/questionText"
         android:layout_alignParentEnd="true"
         android:id="@+id/chooseImageBtn"
         android:background="@android:color/transparent"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:onClick="onAddPhotoBtnClick"
+        android:layout_marginLeft="15dp" />
 
     <Button
         android:text="Add"
@@ -115,7 +117,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
-        android:background="@drawable/commonbutton" />
+        android:background="@drawable/commonbutton"
+        android:onClick="onAddBtnClick"
+        />
 
 
 </RelativeLayout>
