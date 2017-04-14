@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -35,6 +37,11 @@ public class AddQuestionActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_add_question);
+
+        //set font for title
+        TextView tx = (TextView)findViewById(R.id.questionTitle);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Macondo-Regular.ttf");
+        tx.setTypeface(custom_font);
 
         questionModel = new QuestionModel();
     }
@@ -133,6 +140,8 @@ public class AddQuestionActivity extends AppCompatActivity {
 
         ImageView previewImage = (ImageView) findViewById(R.id.imagePreview);
         previewImage.setImageResource(android.R.color.transparent);
+
+
     }
 
     //handle radio button click
