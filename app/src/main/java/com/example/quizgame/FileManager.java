@@ -39,7 +39,6 @@ public class FileManager {
             File mydir = context.getDir(directoryName, Context.MODE_PRIVATE); //Creating an internal dir;
             File fileWithinMyDir = new File(mydir, fileName);
             InputStream inputStream = new FileInputStream(fileWithinMyDir); //context.openFileInput(filePath);
-
             if ( inputStream != null ) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
