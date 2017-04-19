@@ -15,6 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -155,9 +156,9 @@ public class FileManager {
     }
 
 
-    public static Date covertToDate(String pdate){
-        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-        Date timeStamp=new Date();
+    private static Date covertToDate(String pdate){
+        DateFormat df = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss", Locale.US);
+        Date timeStamp = new Date();
         try {
             timeStamp = df.parse(pdate);
         } catch (ParseException e) {

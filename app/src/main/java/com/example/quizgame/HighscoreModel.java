@@ -1,6 +1,8 @@
 package com.example.quizgame;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by raveenahegde on 11/04/17.
@@ -26,7 +28,7 @@ public class HighscoreModel {
         this.name = name;
     }
 
-    public int getHighScore() {
+    public Integer getHighScore() {
         return highScore;
     }
 
@@ -44,9 +46,10 @@ public class HighscoreModel {
 
     public  String toString()
     {
+        String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss", Locale.US).format(this.getTimeStamp());
         String data = this.getName() + "\t" +
-                this.getHighScore() + "\t" +
-                this.getTimeStamp() + "\n";
+                this.getHighScore().toString() + "\t" +
+                timestamp + "\n";
         return data;
     }
 }

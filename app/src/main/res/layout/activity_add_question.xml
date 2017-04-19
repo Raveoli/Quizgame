@@ -9,42 +9,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.quizgame.AddQuestionActivity">
+    tools:context="com.example.quizgame.AddQuestionActivity"
+    android:background="@android:color/black">
 
      <TextView
             android:text="Add Your Question"
             android:layout_width="match_parent"
          android:id="@+id/questionTitle"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:fontFamily="serif"
-            android:typeface="serif"
-            android:textSize="24sp"
-            android:lineSpacingExtra="8sp"
-            android:textStyle="normal|bold"
-            android:textAlignment="center"
-            android:padding="8dp"
-         android:gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+         android:typeface="serif"
+         android:padding="8dp"
          android:layout_height="80dp"
-         android:layout_marginBottom="15dp" />
-
-     <TextView
-            android:text="Question"
-            android:layout_width="75dp"
-            android:layout_height="30dp"
-            android:id="@+id/question"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/questionTitle"
-            android:fontFamily="sans-serif"
-         android:gravity="center_vertical|center_horizontal" />
+         android:layout_marginBottom="15dp"
+         android:gravity="center"
+         android:textColor="@android:color/white" />
 
     <EditText
         android:layout_height="100dp"
         android:id="@+id/questionText"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/questionTitle"
-        android:background="@drawable/edittextbg"
+        android:background="@android:drawable/editbox_background"
         android:layout_width="0dp"
-        android:layout_toEndOf="@id/question"/>
+        android:layout_toEndOf="@+id/question"
+        android:gravity="top" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -56,12 +44,19 @@
         android:layout_toEndOf="@+id/answer">
         <RadioButton android:id="@+id/radio_true"
             android:layout_width="104dp"
+            android:layout_height="match_parent"
             android:text="True"
-            android:onClick="onRadioButtonClicked" />
+            android:onClick="onRadioButtonClicked"
+            android:buttonTint="@android:color/background_light"
+            android:textColor="@android:color/white" />
         <RadioButton android:id="@+id/radio_false"
             android:layout_width="104dp"
+            android:layout_height="match_parent"
             android:text="False"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/background_light"
+            />
     </RadioGroup>
 
     <TextView
@@ -73,7 +68,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/questionText"
         android:layout_marginTop="15dp"
-        android:gravity="center_vertical|center_horizontal" />
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/answer"
@@ -83,19 +79,18 @@
         android:layout_width="75dp"
         android:layout_height="30dp"
         android:gravity="center_vertical|center_horizontal"
-        android:layout_alignTop="@+id/radio_group" />
+        android:layout_alignTop="@+id/radio_group"
+        android:textColor="@android:color/white" />
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="200dp"
-        app:srcCompat="@mipmap/ic_launcher"
         android:layout_below="@+id/questionText"
         android:layout_toEndOf="@+id/chooseImageText"
         android:layout_toStartOf="@id/chooseImageBtn"
         android:id="@+id/imagePreview"
         android:layout_marginTop="15dp"
-        android:src="@mipmap/ic_launcher"
-        android:background="@drawable/edittextbg" />
+        android:background="@android:drawable/alert_light_frame" />
 
     <ImageButton
         android:layout_width="40dp"
@@ -107,7 +102,8 @@
         android:background="@android:color/transparent"
         android:layout_marginTop="15dp"
         android:onClick="onAddPhotoBtnClick"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginLeft="15dp"
+        android:tint="@android:color/white" />
 
     <Button
         android:text="Add"
@@ -120,6 +116,17 @@
         android:background="@drawable/commonbutton"
         android:onClick="onAddBtnClick"
         />
+
+    <TextView
+           android:text="Question"
+           android:layout_width="75dp"
+           android:layout_height="30dp"
+           android:id="@+id/question"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_below="@+id/questionTitle"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white" />
 
 
 </RelativeLayout>

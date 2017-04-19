@@ -8,16 +8,74 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.quizgame.MainActivity">
+    tools:context="com.example.quizgame.MainActivity"
+    android:background="@drawable/quiz_bg">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/logo"
+        android:layout_alignParentStart="true"
+        android:text="Food Away!"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        android:textColor="@android:color/background_dark" />
 
     <Button
+        android:id="@+id/playbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:onClick="onPlayBtnClick"
+        android:background="@drawable/commonbutton"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp" />
+
+    <Button
+        android:id="@+id/addquestionbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Question"
-        android:onClick="onAddQuestionBtnClick"/>
+        android:onClick="onAddQuestionBtnClick"
+        android:background="@drawable/commonbutton"
+        android:layout_below="@+id/playbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp" />
 
+    <Button
+        android:id="@+id/highscorebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="High Scores"
+        android:onClick="onHighScoreBtnClick"
+        android:background="@drawable/commonbutton"
+        android:layout_below="@+id/addquestionbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp" />
 
+    <Button
+        android:id="@+id/helpbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Help"
+        android:onClick="onHelpBtnClick"
+        android:background="@drawable/commonbutton"
+        android:layout_below="@+id/highscorebtn"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp" />
 
+    <Button
+        android:id="@+id/settingsbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:onClick="onSettingsBtnClick"
+        android:background="@drawable/commonbutton"
+        android:layout_below="@+id/helpbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp" />
 
 </RelativeLayout>
