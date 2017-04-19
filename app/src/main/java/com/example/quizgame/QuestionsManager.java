@@ -6,6 +6,7 @@
 package com.example.quizgame;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -44,6 +45,7 @@ public class QuestionsManager {
     public static void readAllQuestionsFromFile(Context context)
     {
        questionsList = FileManager.readFromQuestionsFile(QuizGameConstants.fileDirectoryPath,QuizGameConstants.questionsFileName,context);
+        //Log.d("Bitmap",questionsList.toString());
     }
 
     //returns all the questions in the file

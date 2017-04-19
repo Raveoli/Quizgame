@@ -9,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.quizgame.Questions">
+    tools:context="com.example.quizgame.Questions"
+    android:background="@android:color/black">
 
     <TextView
         android:text="TextView"
@@ -18,7 +19,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="57dp"
-        android:id="@+id/question" />
+        android:id="@+id/question"
+        android:textColor="@android:color/white" />
 
     <Button
         android:text="@string/false_button"
@@ -60,7 +62,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:id="@+id/settings"
-        android:drawableStart="@drawable/ic_settings_black_24dp"
+        android:drawableStart="@drawable/ic_settings_white_24dp"
         android:layout_marginTop="5dp" />
 
     <Button
@@ -71,7 +73,7 @@
         android:background="@android:color/transparent"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:drawableStart="@drawable/ic_help_black_24dp" />
+        android:drawableStart="@drawable/ic_help_white_24dp" />
 
     <TextView
         android:text="Score:"
@@ -79,14 +81,19 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/helpButton"
         android:layout_centerHorizontal="true"
-        android:id="@+id/scoreText" />
+        android:id="@+id/scoreText"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/scoreText"
-        android:layout_alignEnd="@+id/questionImage"
-        android:id="@+id/score" />
+        android:layout_marginLeft="40dp"
+        android:id="@+id/score"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="5dp"
+        android:layout_alignBaseline="@+id/settings"
+        android:layout_alignBottom="@+id/settings"
+        android:layout_toEndOf="@+id/scoreText" />
 
 </RelativeLayout>

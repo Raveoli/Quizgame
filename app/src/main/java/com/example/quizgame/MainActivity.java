@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPlayBtnClick(View view)
     {
-
+        Intent plIntent = new Intent(this, Questions.class);
+        startActivity(plIntent);
     }
 
     public void onHighScoreBtnClick(View view)
