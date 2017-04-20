@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,11 @@ import java.util.Collections;
 
 public class Questions extends AppCompatActivity {
     private ArrayList<QuestionModel> questionList;
+    private String[] questions,answers,imagePath;
+    private Bitmap[] image;
+    int score,nextQuestion=1;
+    boolean lastQuestion=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +33,10 @@ public class Questions extends AppCompatActivity {
         questionList=QuestionsManager.getQuestionsList();
         TextView question=(TextView)findViewById(R.id.question);
         ImageView questionImage=(ImageView) findViewById(R.id.questionImage);
-        String[] questions=new String[questionList.size()];
-        String[] answers=new String[questionList.size()];
-        String[] imagePath=new String[questionList.size()];
-        Bitmap[] image=new Bitmap[questionList.size()];
+        questions=new String[questionList.size()];
+        answers=new String[questionList.size()];
+        imagePath=new String[questionList.size()];
+        image=new Bitmap[questionList.size()];
         //int[] score;
         Collections.shuffle(questionList); //Randomly display questions
         int i=0;
@@ -47,5 +53,45 @@ public class Questions extends AppCompatActivity {
         }
         question.setText(questions[0]);
         questionImage.setImageBitmap(image[0]);
+    }
+
+    public void onTrueBtnClick(View view){
+        TextView question=(TextView)findViewById(R.id.question);
+        TextView scoreInc=(TextView)findViewById(R.id.score);
+        ImageView questionImage=(ImageView) findViewById(R.id.questionImage);
+
+        if(answers[nextQuestion-1].equalsIgnoreCase("true") && lastQuestion==false){
+            score+=3;
+        }
+        scoreInc.setText(Integer.toString(score));
+        if(nextQuestion<questionList.size()){
+            question.setText(questions[nextQuestion]);
+            questionImage.setImageBitmap(image[nextQuestion]);
+            nextQuestion++;
+        }else{
+            lastQuestion=true;
+        }
+        //Log.d("d",Integer.toString(score));
+    }
+
+    public void onFalseBtnClick(View view){
+        TextView question=(TextView)findViewById(R.id.question);
+        TextView scoreInc=(TextView)findViewById(R.id.score);
+        ImageView questionImage=(ImageView) findViewById(R.id.questionImage);
+
+        if(answers[nextQuestion-1].equalsIgnoreCase("False") && lastQuestion==false){
+            score+=3;
+        }
+        scoreInc.setText(Integer.toString(score));
+        //Log.d("d",Integer.toString(score));
+        if(nextQuestion<questionList.size()){
+            question.setText(questions[nextQuestion]);
+            questionImage.setImageBitmap(image[nextQuestion]);
+            nextQuestion++;
+        }
+        else{
+            lastQuestion=true;
+        }
+        //Log.d("d",Integer.toString(score));
     }
 }

@@ -32,7 +32,8 @@
         android:textStyle="bold"
         android:layout_marginTop="14dp"
         android:layout_alignStart="@+id/trueButton"
-        android:layout_below="@+id/trueButton" />
+        android:layout_below="@+id/trueButton"
+        android:onClick="onFalseBtnClick" />
 
     <Button
         android:text="@string/true_button"
@@ -44,7 +45,8 @@
         android:textStyle="bold"
         android:layout_marginTop="14dp"
         android:layout_below="@+id/questionImage"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onTrueBtnClick" />
 
     <ImageView
         android:layout_width="200dp"
