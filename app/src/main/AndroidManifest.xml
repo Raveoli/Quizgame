@@ -24,7 +24,8 @@
         <activity android:name=".Questions" />
         <activity android:name=".HighscoresActivity" />
         <activity android:name=".HelpActivity" />
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".highScoreName"></activity>
     </application>
 
 </manifest>
