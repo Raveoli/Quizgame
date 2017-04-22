@@ -53,4 +53,11 @@ public class QuestionsManager {
         return questionsList;
     }
 
+    public static  boolean hasQuestions(Context context)
+    {
+        QuestionsManager.readAllQuestionsFromFile(context);
+        ArrayList<QuestionModel> qlist = QuestionsManager.getQuestionsList();
+        return qlist.size() != 0 ;
+    }
+
 }

@@ -112,10 +112,16 @@ public class AddQuestionActivity extends AppCompatActivity {
     //handle add button click
     public void onAddBtnClick(View view)
     {
-        //TODO - validate the inputs
         //create a quesion model object with the chosen answers and save it to file
         EditText quesText = (EditText) findViewById(R.id.questionText);
         questionModel.setQuestion(quesText.getText().toString());
+
+        // validate the inputs
+        if(questionModel.getQuestion() != null && questionModel.getQuestion().isEmpty() || questionModel.getAnswer() != null && questionModel.getAnswer().isEmpty())
+        {
+            Toast.makeText(this.getApplicationContext(),"Please fill in the question and answer", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Log.d("AddQuestionActivity", "onAddBtnClick: writing to file...");
         //write to file

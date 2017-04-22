@@ -10,6 +10,9 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,8 +56,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPlayBtnClick(View view)
     {
-        Intent plIntent = new Intent(this, Questions.class);
-        startActivity(plIntent);
+        //check if there are any questions if so redirect
+        boolean valid  = QuestionsManager.hasQuestions(getApplicationContext());
+        if(valid)
+        {
+            Intent plIntent = new Intent(this, Questions.class);
+            startActivity(plIntent);
+        } else
+            Toast.makeText(this.getApplicationContext(),"Please add questions.",Toast.LENGTH_SHORT).show();
+
     }
 
     public void onHighScoreBtnClick(View view)

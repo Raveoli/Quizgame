@@ -1,5 +1,6 @@
 package com.example.quizgame;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,7 @@ class HighscoresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscores);
 
-        HighscoresManager.addSampleHighscores(this.getApplicationContext());
+//        HighscoresManager.addSampleHighscores(this.getApplicationContext());
 
         HighscoresManager.readAllHighscoresFromFile(this.getApplicationContext());
 
@@ -30,38 +31,64 @@ class HighscoresActivity extends AppCompatActivity {
 
     private void loadHighscoresIntoUI()
     {
-        HighscoreModel[] scores = new HighscoreModel[5];
-        scores  = HighscoresManager.getScoresList().toArray(scores);
 
-        TextView name1 = (TextView) findViewById(R.id.firstname);
-        TextView score1 = (TextView) findViewById(R.id.firstscore);
-        name1.setText(scores[0].getName());
-        score1.setText(scores[0].getHighScore().toString());
+        ArrayList<HighscoreModel> sList = HighscoresManager.getScoresList();
+        if(sList.size() == 0)
+            return;
 
-        TextView name2 = (TextView) findViewById(R.id.secondname);
-        TextView score2 = (TextView) findViewById(R.id.secondscore);
-        name2.setText(scores[1].getName());
-        score2.setText(scores[1].getHighScore().toString());
+        HighscoreModel[] scores = new HighscoreModel[sList.size()];
+        sList.toArray(scores);
 
-        TextView name3 = (TextView) findViewById(R.id.thirdname);
-        TextView score3 = (TextView) findViewById(R.id.thirdscore);
-        name3.setText(scores[2].getName());
-        score3.setText(scores[2].getHighScore().toString());
+        for(int i = 0; i < scores.length ;i++)
+        {
+            switch (i)
+            {
+                case 0:{
+                    TextView name1 = (TextView) findViewById(R.id.firstname);
+                    TextView score1 = (TextView) findViewById(R.id.firstscore);
+                    name1.setText(scores[0].getName());
+                    score1.setText(scores[0].getHighScore().toString());
+                    break;
+                }
+                case 1 : {
+                    TextView name2 = (TextView) findViewById(R.id.secondname);
+                    TextView score2 = (TextView) findViewById(R.id.secondscore);
+                    name2.setText(scores[1].getName());
+                    score2.setText(scores[1].getHighScore().toString());
+                    break;
+                }
+                case 2:{
+                    TextView name3 = (TextView) findViewById(R.id.thirdname);
+                    TextView score3 = (TextView) findViewById(R.id.thirdscore);
+                    name3.setText(scores[2].getName());
+                    score3.setText(scores[2].getHighScore().toString());
+                    break;
+                }
+                case 3: {
+                    TextView name4 = (TextView) findViewById(R.id.fourthname);
+                    TextView score4 = (TextView) findViewById(R.id.fourthscore);
+                    name4.setText(scores[3].getName());
+                    score4.setText(scores[3].getHighScore().toString());
 
-        TextView name4 = (TextView) findViewById(R.id.fourthname);
-        TextView score4 = (TextView) findViewById(R.id.fourthscore);
-        name4.setText(scores[3].getName());
-        score4.setText(scores[3].getHighScore().toString());
+                    break;
+                }
+                case 4:
+                {
+                    TextView name5 = (TextView) findViewById(R.id.fifthname);
+                    TextView score5 = (TextView) findViewById(R.id.fifthscore);
+                    name5.setText(scores[4].getName());
+                    score5.setText(scores[4].getHighScore().toString());
 
-        TextView name5 = (TextView) findViewById(R.id.fifthname);
-        TextView score5 = (TextView) findViewById(R.id.fifthscore);
-        name5.setText(scores[4].getName());
-        score5.setText(scores[4].getHighScore().toString());
-
+                    break;
+                }
+            }
+        }
     }
 
     public void onOKBtnClick(View view)
     {
-        finish();
+        Intent highScoreIntent = new Intent(this, MainActivity.class);
+        startActivity(highScoreIntent);
+
     }
 }

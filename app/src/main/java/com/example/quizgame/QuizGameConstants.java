@@ -12,5 +12,6 @@ public class QuizGameConstants {
     static final public String highscoresFileName = "highscores.txt";
     static final public String trueOption = "True";
     static final public String falseOption = "False";
+    static final public String highScore = "HighScore";
 }
 

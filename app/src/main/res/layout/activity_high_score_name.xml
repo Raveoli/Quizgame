@@ -39,7 +39,7 @@
 
     <EditText
         android:layout_height="45dp"
-        android:id="@+id/questionText"
+        android:id="@+id/highscoreNameText"
         android:layout_below="@+id/nameText"
         android:background="@android:drawable/editbox_background"
         android:layout_width="50dp"
@@ -49,14 +49,15 @@
 
     <Button
         android:text="Next"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/commonbutton"
         android:textStyle="bold"
         android:id="@+id/nextBtn"
         android:onClick="onNextBtnClick"
-        android:layout_below="@+id/questionText"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp" />
+        android:layout_below="@+id/highscoreNameText"
+        android:layout_marginTop="31dp"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>

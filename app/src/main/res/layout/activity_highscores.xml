@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/firstname"
-            android:text="Sample Name"
+            android:text=""
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp" />
@@ -54,7 +54,7 @@
             android:id="@+id/firstscore"
             android:layout_alignParentEnd="true"
 
-            android:text="100"
+            android:text=""
             android:layout_centerInParent="true"
             android:layout_marginEnd="10dp" />
 
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/secondname"
-            android:text="Sample Name"
+            android:text=""
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp" />
@@ -88,7 +88,7 @@
             android:id="@+id/secondscore"
             android:layout_alignParentEnd="true"
 
-            android:text="100"
+            android:text=""
             android:layout_centerInParent="true"
             android:layout_marginEnd="10dp" />
 
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/thirdname"
-            android:text="Sample Name"
+            android:text=""
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp" />
@@ -122,7 +122,7 @@
             android:id="@+id/thirdscore"
             android:layout_alignParentEnd="true"
 
-            android:text="100"
+            android:text=""
             android:layout_centerInParent="true"
             android:layout_marginEnd="10dp" />
 
@@ -145,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fourthname"
-            android:text="Sample Name"
+            android:text=""
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp" />
@@ -156,7 +156,7 @@
             android:id="@+id/fourthscore"
             android:layout_alignParentEnd="true"
 
-            android:text="100"
+            android:text=""
             android:layout_centerInParent="true"
             android:layout_marginEnd="10dp" />
 
@@ -179,7 +179,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fifthname"
-            android:text="Sample Name"
+            android:text=""
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp" />
@@ -190,7 +190,7 @@
             android:id="@+id/fifthscore"
             android:layout_alignParentEnd="true"
 
-            android:text="100"
+            android:text=""
             android:layout_centerInParent="true"
             android:layout_marginEnd="10dp" />
 

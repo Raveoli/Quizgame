@@ -1,6 +1,7 @@
 package com.example.quizgame;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 
 public class Questions extends AppCompatActivity {
     private ArrayList<QuestionModel> questionList;
@@ -70,6 +73,7 @@ public class Questions extends AppCompatActivity {
             nextQuestion++;
         }else{
             lastQuestion=true;
+            checkIfHighScore();
         }
         //Log.d("d",Integer.toString(score));
     }
@@ -91,7 +95,25 @@ public class Questions extends AppCompatActivity {
         }
         else{
             lastQuestion=true;
+            checkIfHighScore();
         }
         //Log.d("d",Integer.toString(score));
+    }
+
+    public void checkIfHighScore()
+    {
+        TextView scoreInc=(TextView)findViewById(R.id.score);
+        int currentScore = Integer.parseInt(scoreInc.getText().toString());
+        boolean isHigh = HighscoresManager.checkIfHighScore(currentScore,this.getApplicationContext());
+        if(isHigh)
+        {
+            Intent hIntent = new Intent(this, highScoreName.class);
+            hIntent.putExtra(QuizGameConstants.highScore,currentScore);
+            startActivity(hIntent);
+        } else {
+            Toast.makeText(this.getApplicationContext()," GAME OVER!", Toast.LENGTH_LONG).show();
+            Intent highScoreIntent = new Intent(this, MainActivity.class);
+            startActivity(highScoreIntent);
+        }
     }
 }
