@@ -25,7 +25,8 @@
         <activity android:name=".HighscoresActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".highScoreName"></activity>
+        <activity android:name=".highScoreName" />
+        <activity android:name=".gameOver"></activity>
     </application>
 
 </manifest>

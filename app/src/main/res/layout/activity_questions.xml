@@ -64,7 +64,8 @@
         android:layout_height="24dp"
         android:id="@+id/settings"
         android:drawableStart="@drawable/ic_settings_white_24dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:onClick="onSettingsClick" />
 
     <Button
         android:text=""
@@ -74,7 +75,8 @@
         android:background="@android:color/transparent"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:drawableStart="@drawable/ic_help_white_24dp" />
+        android:drawableStart="@drawable/ic_help_white_24dp"
+        android:onClick="onHelpClick" />
 
     <TextView
         android:text="Score:"
@@ -92,7 +94,7 @@
         android:layout_marginLeft="40dp"
         android:id="@+id/score"
         android:textColor="@android:color/white"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="4dp"
         android:layout_alignBaseline="@+id/settings"
         android:layout_alignBottom="@+id/settings"
         android:layout_toEndOf="@+id/scoreText" />
