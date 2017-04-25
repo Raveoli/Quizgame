@@ -1,10 +1,12 @@
 package com.example.quizgame;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Date;
@@ -15,6 +17,9 @@ public class highScoreName extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score_name);
+        TextView tx = (TextView)findViewById(R.id.highScoreText);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Macondo-Regular.ttf");
+        tx.setTypeface(custom_font);
         score = (int) getIntent().getSerializableExtra(QuizGameConstants.highScore);
     }
 

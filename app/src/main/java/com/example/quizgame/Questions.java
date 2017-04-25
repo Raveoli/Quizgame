@@ -41,7 +41,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
     public static float finalZ;
 
     public static boolean shakeIsHappening;
-    //public static int beatnumber = 0;
+    public static int beatnumber = 0;
     public static float highZ;
     public static float lowZ;
     public static boolean flick;
@@ -134,7 +134,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
 
                     }
 
-                    if (flick == true && mAccelNoGrav > 0.5) {
+                    if (flick == true && mAccelNoGrav > -1.9) {
                         //beatnumber++;
                         //Log.d("Clicked", "Flip Backwards click number: " + beatnumber + "\n" + "PA: "+ mLastAccelWithGrav + " CA:" + mAccelNoGrav + "\n " + "Lz " + z.indexOf(z.size() - 2) + "z " + z.indexOf(z.size() - 1) + "\n" + "\n");
                     /*try {
@@ -148,7 +148,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
                         shakeIsHappening = false;
                     }
 
-                    if (flick == true && mAccelNoGrav < -0.2) {
+                    if (flick == true && mAccelNoGrav < -1.9) {
                         //beatnumber++;
                         //Log.d("Clicked", "Flip Forwards click number: " + beatnumber + "\n" + "PA: "+ mLastAccelWithGrav + " CA:" + mAccelNoGrav + "\n " + "Lz " + z.indexOf(z.size() - 2) + "z " + z.indexOf(z.size() - 1) + "\n" + "\n");
                     /*try {
@@ -167,6 +167,9 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
                 }
             }
         }
+        else{
+            manager.unregisterListener(this);
+        }
 
     }
 
@@ -181,6 +184,11 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
     protected void onPause() {
         super.onPause();
         manager.unregisterListener(this);
+    }
+
+    @Override
+    public void onBackPressed(){
+
     }
 
     public void displayQuestions(Context context){

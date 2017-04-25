@@ -204,7 +204,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
-        android:background="@drawable/commonbutton"
+        android:background="@drawable/button"
         android:onClick="onOKBtnClick"
         />
 </RelativeLayout>

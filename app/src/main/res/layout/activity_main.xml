@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Play"
         android:onClick="onPlayBtnClick"
-        android:background="@drawable/commonbutton"
+        android:background="@drawable/button"
         android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp" />
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:text="Add Question"
         android:onClick="onAddQuestionBtnClick"
-        android:background="@drawable/commonbutton"
+        android:background="@drawable/button"
         android:layout_below="@+id/playbtn"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp" />
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="High Scores"
         android:onClick="onHighScoreBtnClick"
-        android:background="@drawable/commonbutton"
+        android:background="@drawable/button"
         android:layout_below="@+id/addquestionbtn"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp" />
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:text="Help"
         android:onClick="onHelpBtnClick"
-        android:background="@drawable/commonbutton"
+        android:background="@drawable/button"
         android:layout_below="@+id/highscorebtn"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp" />
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:onClick="onSettingsBtnClick"
-        android:background="@drawable/commonbutton"
+        android:background="@drawable/button"
         android:layout_below="@+id/helpbtn"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp" />
