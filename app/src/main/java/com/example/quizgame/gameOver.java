@@ -1,3 +1,7 @@
+/*
+* Ask the player to play again or to go home if they lost the game
+* Written by Raveena R Hegde 04/21/2017
+* */
 package com.example.quizgame;
 
 import android.content.Intent;

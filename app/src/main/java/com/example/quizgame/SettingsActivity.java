@@ -1,3 +1,7 @@
+/*
+* Code to toggle sound in the app
+* Written by Raveena R Hegde 04/25/2017
+* */
 package com.example.quizgame;
 
 import android.content.SharedPreferences;
@@ -22,8 +26,6 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         toggle = (ToggleButton) findViewById(R.id.soundToggleButton);
-        /*SharedPreferences sharedPrefs = getSharedPreferences("com.example.xyle", MODE_PRIVATE);
-        toggle.setChecked(sharedPrefs.getBoolean("NameOfThingToSave", true));*/
         //set font for title
         TextView tx = (TextView)findViewById(R.id.settingsTitle);
         Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Macondo-Regular.ttf");
@@ -31,21 +33,13 @@ public class SettingsActivity extends AppCompatActivity {
         //Log.d("Clicked","Play button"+play);
     }
 
+    //Get value of toggle button
     public void onToggleBtnClick(View view){
         play = ((ToggleButton) view).isChecked();
-        /*if(play){
-            SharedPreferences.Editor editor = getSharedPreferences("com.example.xyz", MODE_PRIVATE).edit();
-            editor.putBoolean("NameOfThingToSave", true);
-            editor.commit();
-        }
-        else{
-            SharedPreferences.Editor editor = getSharedPreferences("com.example.xyz", MODE_PRIVATE).edit();
-            editor.putBoolean("NameOfThingToSave", false);
-            editor.commit();
-        }*/
         //Log.d("Clicked","After click Play button"+play);
     }
 
+    //Saving state of toggle button
     public void onPause() {
         super.onPause();
         bundle.putBoolean("ToggleButtonState", play);

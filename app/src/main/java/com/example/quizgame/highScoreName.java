@@ -1,3 +1,8 @@
+/*
+* Activity for asking user to enter name for highscore
+* Written by Raveena R Hegde 04/21/2017
+* */
+
 package com.example.quizgame;
 
 import android.content.Intent;

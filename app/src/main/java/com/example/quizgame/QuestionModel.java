@@ -3,7 +3,7 @@ package com.example.quizgame;
 import android.graphics.Bitmap;
 
 /**
- * Created by raveenahegde on 11/04/17.
+ * Written by Pooja.N.S 04/11/17
  */
 
 public class QuestionModel {

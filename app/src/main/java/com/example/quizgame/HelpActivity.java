@@ -1,3 +1,7 @@
+/*
+* Display useful text to help player to play the game
+* Written by Raveena R Hegde 04/21/2017
+* */
 package com.example.quizgame;
 
 import android.graphics.Typeface;

@@ -1,3 +1,7 @@
+/*
+* Display questions in the app
+* Written by Raveena R Hegde 04/21/2017
+* */
 package com.example.quizgame;
 
 import android.content.Context;
@@ -88,6 +92,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
 
     }
 
+    //Checks sudden movement of the phone based on z-axis
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(!change) {
@@ -143,12 +148,6 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
                     if (flick == true && mAccelNoGrav > -1.9) {
                         //beatnumber++;
                         //Log.d("Clicked", "Flip Backwards click number: " + beatnumber + "\n" + "PA: "+ mLastAccelWithGrav + " CA:" + mAccelNoGrav + "\n " + "Lz " + z.indexOf(z.size() - 2) + "z " + z.indexOf(z.size() - 1) + "\n" + "\n");
-                    /*try {
-                        Thread.sleep(500);
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }*/
                         trueOptionClicked();
                         Toast.makeText(this.getApplicationContext(), " True clicked!", Toast.LENGTH_LONG).show();
                         shakeIsHappening = false;
@@ -157,12 +156,6 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
                     if (flick == true && mAccelNoGrav < -1.9) {
                         //beatnumber++;
                         //Log.d("Clicked", "Flip Forwards click number: " + beatnumber + "\n" + "PA: "+ mLastAccelWithGrav + " CA:" + mAccelNoGrav + "\n " + "Lz " + z.indexOf(z.size() - 2) + "z " + z.indexOf(z.size() - 1) + "\n" + "\n");
-                    /*try {
-                        Thread.sleep(500);
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }*/
                         falseOptionClicked();
                         Toast.makeText(this.getApplicationContext(), " False clicked!", Toast.LENGTH_LONG).show();
                         shakeIsHappening = false;
@@ -186,6 +179,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
         manager.registerListener(this, accelerometer,SensorManager.SENSOR_DELAY_FASTEST);
     }
 
+    //Unregistor sensor
     @Override
     protected void onPause() {
         super.onPause();
@@ -197,6 +191,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
 
     }
 
+    //Display questions in random order
     public void displayQuestions(Context context){
         questionList=QuestionsManager.getQuestionsList();
 
@@ -247,6 +242,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
         startActivity(HelpIntent);
     }
 
+    //Add score if answer matches to true
     public void trueOptionClicked(){
         //Log.d("Clicked","nextQuestion"+nextQuestion);
         //Log.d("Clicked","lastQuestion"+lastQuestion);
@@ -270,6 +266,7 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
         //Log.d("d",Integer.toString(score));
     }
 
+    //Add score if answer matches to true
     public void falseOptionClicked(){
 
         //Log.d("Clicked","nextQuestion"+nextQuestion);
@@ -297,6 +294,8 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
         //Log.d("Clicked","---------------------------");
         //Log.d("d",Integer.toString(score));
     }
+
+    //Check if the player achieved highscore
     public void checkIfHighScore()
     {
         TextView scoreInc=(TextView)findViewById(R.id.score);

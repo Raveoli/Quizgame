@@ -1,3 +1,13 @@
+/*
+* Project: Quiz game based on food trivia
+* Developers: Pooja (pxn161830) and Raveena (rxh160530)
+* Features:
+* 1. True/False game play to answer questions displayed in random order. Points get added according to the correct answer.
+* 2. Flipping the phone forwards and backwards to make the player answer questions in a different way
+* 3. Toggling of sound in the app
+* 4. Adding of additional questions by the player
+* 5. Help screen to provide helpful text on gameplay for the player
+* */
 package com.example.quizgame;
 
 import android.content.Intent;
