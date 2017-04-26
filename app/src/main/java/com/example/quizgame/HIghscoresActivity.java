@@ -2,6 +2,7 @@ package com.example.quizgame;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.example.quizgame.SettingsActivity.play;
+
 class HighscoresActivity extends AppCompatActivity {
+
+    static MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,8 @@ class HighscoresActivity extends AppCompatActivity {
         setContentView(R.layout.activity_highscores);
 
 //        HighscoresManager.addSampleHighscores(this.getApplicationContext());
+
+        mp = MediaPlayer.create(this, R.raw.buttonclick);
 
         HighscoresManager.readAllHighscoresFromFile(this.getApplicationContext());
 
@@ -87,6 +94,9 @@ class HighscoresActivity extends AppCompatActivity {
 
     public void onOKBtnClick(View view)
     {
+        if(play) {
+            mp.start();
+        }
         Intent highScoreIntent = new Intent(this, MainActivity.class);
         startActivity(highScoreIntent);
 

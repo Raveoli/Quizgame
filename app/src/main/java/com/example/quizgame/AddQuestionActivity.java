@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,11 +25,15 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
+import static com.example.quizgame.SettingsActivity.play;
+
 public class AddQuestionActivity extends AppCompatActivity {
 
     final private int SELECT_FILE = 1;
 
     private QuestionModel questionModel;
+
+    static MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,8 @@ public class AddQuestionActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_add_question);
+
+        mp = MediaPlayer.create(this, R.raw.buttonclick);
 
         //set font for title
         TextView tx = (TextView)findViewById(R.id.questionTitle);
@@ -112,6 +119,9 @@ public class AddQuestionActivity extends AppCompatActivity {
     //handle add button click
     public void onAddBtnClick(View view)
     {
+        if(play) {
+            mp.start();
+        }
         //create a quesion model object with the chosen answers and save it to file
         EditText quesText = (EditText) findViewById(R.id.questionText);
         questionModel.setQuestion(quesText.getText().toString());

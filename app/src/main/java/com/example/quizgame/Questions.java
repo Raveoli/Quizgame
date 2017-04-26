@@ -8,6 +8,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.FloatMath;
@@ -22,7 +23,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
+import static com.example.quizgame.SettingsActivity.play;
+
 public class Questions extends AppCompatActivity implements SensorEventListener {
+    static MediaPlayer mp;
     private ArrayList<QuestionModel> questionList;
     private String[] questions,answers,imagePath;
     private Bitmap[] image;
@@ -53,6 +57,8 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+
+        mp = MediaPlayer.create(this, R.raw.buttonclick);
 
         question=(TextView)findViewById(R.id.question);
         scoreInc=(TextView)findViewById(R.id.score);
@@ -218,10 +224,16 @@ public class Questions extends AppCompatActivity implements SensorEventListener 
     }
 
     public void onTrueBtnClick(View view){
+        if(play) {
+            mp.start();
+        }
         trueOptionClicked();
     }
 
     public void onFalseBtnClick(View view){
+        if(play) {
+            mp.start();
+        }
         falseOptionClicked();
     }
 

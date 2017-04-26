@@ -21,4 +21,39 @@
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:textColor="@android:color/white" />
+
+    <TextView
+        android:text="All you have to do is press 'Play' and answer True or False to the question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:typeface="serif"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:text="You can answer the phone by placing the phone horizontal on your hand and flipping the phone backwards for true and forwards for false."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="34dp"
+        android:typeface="serif"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/textView3" />
+
+    <TextView
+        android:text="Welcome to the Quiz Game!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:typeface="serif"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/helpTitle"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

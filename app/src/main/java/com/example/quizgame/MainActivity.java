@@ -2,6 +2,7 @@ package com.example.quizgame;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +15,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static com.example.quizgame.SettingsActivity.play;
+
 public class MainActivity extends AppCompatActivity {
 
+    static MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_main);
+
+        mp = MediaPlayer.create(this, R.raw.buttonclick);
 
         //set font for title
         TextView tx = (TextView)findViewById(R.id.logo);
@@ -50,12 +56,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAddQuestionBtnClick(View view)
     {
+        if(play) {
+            mp.start();
+        }
         Intent addQuestionIntent = new Intent(this, AddQuestionActivity.class);
         startActivity(addQuestionIntent);
     }
 
     public void onPlayBtnClick(View view)
     {
+        if(play) {
+            mp.start();
+        }
         //check if there are any questions if so redirect
         boolean valid  = QuestionsManager.hasQuestions(getApplicationContext());
         if(valid)
@@ -69,16 +81,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void onHighScoreBtnClick(View view)
     {
+        if(play) {
+            mp.start();
+        }
         Intent hsIntent = new Intent(this, HighscoresActivity.class);
         startActivity(hsIntent);
     }
     public void onHelpBtnClick(View view)
     {
+        if(play) {
+            mp.start();
+        }
         Intent hIntent = new Intent(this, HelpActivity.class);
         startActivity(hIntent);
     }
     public void onSettingsBtnClick(View view)
     {
+        if(play) {
+            mp.start();
+        }
         Intent sIntent = new Intent(this, SettingsActivity.class);
         startActivity(sIntent);
     }
