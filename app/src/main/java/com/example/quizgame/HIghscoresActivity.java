@@ -1,4 +1,5 @@
 /**
+ * This activity shows all the highscores.Top 5 are retained.
  * Written by Pooja.N.S 04/11/17
  */
 package com.example.quizgame;

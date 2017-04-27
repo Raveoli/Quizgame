@@ -1,7 +1,8 @@
 package com.example.quizgame;
 
 /**
- * Created by sunny on 11-04-2017.
+ * Constants used in the app
+ * Created by Pooja on 04/11/2017.
  */
 
 public class QuizGameConstants {

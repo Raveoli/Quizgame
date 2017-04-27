@@ -1,3 +1,7 @@
+/**
+ * This file contains all the file functionality to communicate with the internal storage
+ * Written by Pooja.N.S 04/11/17
+ */
 package com.example.quizgame;
 
 
@@ -23,9 +27,7 @@ import android.util.Log;
 
 import static java.lang.Integer.parseInt;
 
-/**
- * Written by Pooja.N.S 04/11/17
- */
+
 
 
 //Class that manages file operations

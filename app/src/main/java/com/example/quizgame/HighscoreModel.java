@@ -1,12 +1,14 @@
+/**
+ * This is the model class for highscores.
+ * Written by Pooja.N.S 04/11/17
+ */
 package com.example.quizgame;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Written by Pooja.N.S 04/11/17
- */
+
 
 public class HighscoreModel {
     private String name;

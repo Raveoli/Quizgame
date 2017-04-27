@@ -1,3 +1,7 @@
+/**
+ * Manager class for operations with highscores
+ * Created by Pooja on 04/11/2017.
+ */
 package com.example.quizgame;
 
 import android.content.Context;
@@ -10,9 +14,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * Created by sunny on 11-04-2017.
- */
+
 
 public  class HighscoresManager {
 
